@@ -1,0 +1,27 @@
+﻿@model List<ContatoViewModel>
+
+<table class="table table-striped" id="table-contatos-usuario">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Celular</th>
+        </tr>
+    </thead>
+    <tbody class="text-left">
+      @if (Model != null && Model.Any())
+        {
+            @foreach (var contato in Model)
+            {
+                <tr class="text-left">
+                    <th escope="row">@contato.Id</th>
+                    <td>@contato.Nome</td>
+                    <td>@contato.Email</td>
+                    <td>@contato.Celular</td>
+                </tr>
+
+            }
+        }
+    </tbody>
+</table>
